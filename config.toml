@@ -1,0 +1,29 @@
+# Edit this to match your hardware. The model can only ever see and use what is listed here.
+
+[llm]
+base_url = "http://127.0.0.1:8080"   # llama-server
+temperature = 0.1
+max_tokens = 256
+timeout_s = 120
+
+[bus]
+kind = "sim"          # "sim" = in-process fake nodes, "mqtt" = real NodeMCU/ESP boards
+host = "localhost"
+port = 1883
+
+[agent]
+max_steps = 4         # tool calls per request
+max_repairs = 2       # retries when the model emits invalid output
+system_extra = ""     # extra instructions appended to the system prompt
+
+[policy]
+max_actions_per_minute = 10
+
+[nodes.living_room]
+sensors = ["temperature", "humidity"]
+
+[nodes.living_room.relays.fan]
+confirm = false       # low risk: runs immediately
+
+[nodes.living_room.relays.heater]
+confirm = true        # risky: asks the human first

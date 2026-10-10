@@ -1,0 +1,2 @@
+# Only needed for bus.kind = "mqtt". Sim mode and the tests use the standard library only.
+paho-mqtt>=2.0

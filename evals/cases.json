@@ -1,0 +1,12 @@
+[
+  {"prompt": "What is the temperature in the living room?",
+   "expect": [["living_room", {"op": "read", "sensor": "temperature"}]]},
+  {"prompt": "Read the humidity",
+   "expect": [["living_room", {"op": "read", "sensor": "humidity"}]]},
+  {"prompt": "Turn the fan on",
+   "expect": [["living_room", {"op": "set", "relay": "fan", "state": true}]]},
+  {"prompt": "Switch the fan off",
+   "expect": [["living_room", {"op": "set", "relay": "fan", "state": false}]]},
+  {"prompt": "Tell me a joke",
+   "expect": []}
+]
